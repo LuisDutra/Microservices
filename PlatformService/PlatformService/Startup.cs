@@ -22,6 +22,8 @@ namespace PlatformService
             services.AddScoped<IPlatformRepo, PlatformRepo>();
             services.AddDbContext<AppDbContext>(opt => 
                 opt.UseInMemoryDatabase("InMem"));
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
